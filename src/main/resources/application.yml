@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    username: root
+    password: Hoanglam06112003
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/mobileTest
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    hikari:
+#      connection-timeout: 250
+#      maximum-pool-size: 1
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    open-in-view: true
+
+# Activate the statistics
+    properties:
+      hibernate:
+        generate_statistics: true
+
+#  jackson:
+#    serialization:
+#      fail-on-empty-beans: false
+
+#logs a message with the SQL statement and each query’s execution time to the log file:
+logging:
+  level:
+    org:
+      hibernate:
+        stat: debug
+
